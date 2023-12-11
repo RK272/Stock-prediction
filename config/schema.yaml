@@ -1,0 +1,4 @@
+columns:
+  -class: category
+  -datetime: datetime
+  -close: float
