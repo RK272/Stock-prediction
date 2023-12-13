@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+@dataclasses import dataclass
 class DataIngestionArtifact:
 
 
