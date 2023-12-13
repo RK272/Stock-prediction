@@ -1,4 +1,5 @@
 import os
+TARGET_COLUMN='class'
 
 PIPELINE_NAME:str ="stock"
 ARTIFACT_DIR:str ="artifact"
