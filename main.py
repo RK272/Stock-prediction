@@ -10,9 +10,13 @@ from src.constant.training_pipeline import SAVED_MODEL_DIR
 
 
 if __name__ =='__main__':
+    try:
+        train_pipeline = TrainPipeline()
+        train_pipeline.run_pipeline()
 
-    train_pipeline = TrainPipeline()
-    train_pipeline.run_pipeline()
+    except Exception as e:
+        print(e)
+        logging.exception(e)
 
 
 

@@ -1,4 +1,13 @@
 columns:
   -class: category
   -datetime: datetime
+  -open: float
+  -high: float
+  -low: float
   -close: float
+
+numerical_columns:
+  - open
+  - high
+  - low
+  - close
