@@ -1,0 +1,54 @@
+best_model_metric_artifact: !!python/object:src.entity.artifact_entity.regressionMetricArtifact
+  mae: !!python/object/apply:numpy.core.multiarray.scalar
+  - &id001 !!python/object/apply:numpy.dtype
+    args:
+    - f8
+    - false
+    - true
+    state: !!python/tuple
+    - 3
+    - <
+    - null
+    - null
+    - null
+    - -1
+    - -1
+    - 0
+  - !!binary |
+    D4mcovHhQEA=
+  mse: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    VyYVUwaZoEA=
+  r2: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    kldGp4n+7z8=
+  rmse: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    aHu51dQLR0A=
+best_model_path: saved_models\1706259379\model.pkl
+improved_accuracy: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  AKDUFsFFFz8=
+is_model_accepted: false
+train_model_metric_artifact: !!python/object:src.entity.artifact_entity.regressionMetricArtifact
+  mae: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    FJKtsGDhNkA=
+  mse: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    P4O915OvkEA=
+  r2: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    Nw5P1UP/7z8=
+  rmse: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    Io8CHN5WQEA=
+trained_model_path: artifact\01_26_2024_14_28_05\model_trainer\trained_model\model.pkl

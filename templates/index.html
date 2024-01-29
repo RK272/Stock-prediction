@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Training and Prediction</title>
+</head>
+<body>
+    <div id="trainingSection">
+        <h1>Train Your Model</h1>
+
+        <!-- Display training result if available -->
+        <p id="trainingResult"></p>
+
+        <!-- Form with "Train" button and JavaScript to handle AJAX -->
+        <button id="trainButton" onclick="trainModel()">Train</button>
+
+        <script>
+            function trainModel() {
+                // Make an AJAX request to the server for training
+                fetch('/train', {
+                    method: 'POST',
+                })
+                .then(response => response.json())  // Assuming the server responds with JSON
+                .then(data => {
+                    // Update the page with the training result
+                    document.getElementById('trainingResult').innerText = data.training_result;
+                })
+                .catch(error => {
+                    console.error('Error during training:', error);
+                });
+            }
+        </script>
+    </div>
+
+    <hr>
+
+    <div id="predictionSection">
+        <h1>Enter Data for Prediction</h1>
+
+        <form id="predictionForm">
+            <label for="datetime">Datetime:</label>
+            <input type="datetime-local" id="datetime" name="datetime" required><br>
+
+            <label for="open">Open:</label>
+            <input type="number" id="open" name="open" required><br>
+
+            <label for="high">High:</label>
+            <input type="number" id="high" name="high" required><br>
+
+            <label for="low">Low:</label>
+            <input type="number" id="low" name="low" required><br>
+
+            <label for="close">Close:</label>
+            <input type="number" id="close" name="close" required><br>
+
+
+
+            <button type="button" onclick="sendFormData()">Predict</button>
+        </form>
+
+        <p id="predictionResult"></p>
+
+        <script>
+            function sendFormData() {
+                // Get form values
+                var datetime = document.getElementById('datetime').value;
+                var open = document.getElementById('open').value;
+                var high = document.getElementById('high').value;
+                var low = document.getElementById('low').value;
+                var close = document.getElementById('close').value;
+
+                // Create an object with form data
+                var formData = {
+                    'datetime': datetime,
+                    'open': open,
+                    'high': high,
+                    'low': low,
+                    'close': close,
+
+                };
+
+                // Make an AJAX request to the server for prediction
+                fetch('/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Update the page with the prediction result
+                    document.getElementById('predictionResult').innerText = data.prediction_result;
+                })
+                .catch(error => {
+                    console.error('Error during prediction:', error);
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>

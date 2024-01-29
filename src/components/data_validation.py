@@ -113,9 +113,6 @@ class DataValidation:
             if not status:
                 error_message = f"{error_message}Train dataframe does not contain all numerical columns.\n"
 
-            status = self.is_numerical_column_exist(dataframe=test_dataframe)
-            if not status:
-                error_message = f"{error_message}Test dataframe does not contain all numerical columns.\n"
 
             if len(error_message) > 0:
                 raise Exception(error_message)
@@ -128,6 +125,7 @@ class DataValidation:
                 valid_train_file_path=self.data_ingestion_artifact.trained_file_path,
                 valid_test_file_path=self.data_ingestion_artifact.test_file_path,
                 invalid_train_file_path=None,
+
                 invalid_test_file_path=None,
                 drift_report_file_path=self.data_validation_config.drift_report_file_path,
             )

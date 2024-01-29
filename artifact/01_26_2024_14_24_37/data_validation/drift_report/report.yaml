@@ -1,0 +1,15 @@
+close:
+  drift_status: false
+  p_value: 0.7512133460277397
+datetime:
+  drift_status: false
+  p_value: 0.6229028761247319
+high:
+  drift_status: false
+  p_value: 0.7083981411630658
+low:
+  drift_status: false
+  p_value: 0.7342282895361133
+open:
+  drift_status: false
+  p_value: 0.6995859391773913
